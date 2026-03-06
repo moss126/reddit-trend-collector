@@ -11,7 +11,7 @@ HEADER = [
     "notes",
 ]
 
-def ensure_template(path: Path, opportunities: list[dict], top_n: int = 50):
+def ensure_template(path: Path, opportunities: list, top_n: int = 50):
     if path.exists():
         return
 
@@ -58,7 +58,6 @@ def _to_float(v):
         return None
 
 def score_amazon(v: dict):
-    # 默认空值不给分也不扣分
     results = v.get("amazon_results")
     rating = v.get("avg_rating")
     price = v.get("avg_price")
@@ -67,7 +66,6 @@ def score_amazon(v: dict):
 
     score = 0.0
 
-    # 搜索结果数量：越少越好
     if results is not None:
         if results <= 200:
             score += 25
@@ -80,7 +78,6 @@ def score_amazon(v: dict):
         else:
             score -= 5
 
-    # 评分：越低说明还有优化空间，太低又可能是坑
     if rating is not None:
         if 3.8 <= rating <= 4.4:
             score += 12
@@ -91,7 +88,6 @@ def score_amazon(v: dict):
         else:
             score += 2
 
-    # 评论量：越不卷越好
     if reviews is not None:
         if reviews <= 100:
             score += 18
@@ -102,7 +98,6 @@ def score_amazon(v: dict):
         else:
             score -= 4
 
-    # 价格：太低不适合，适中更好
     if price is not None:
         if 15 <= price <= 50:
             score += 10
@@ -113,13 +108,12 @@ def score_amazon(v: dict):
         else:
             score += 1
 
-    # 主观适配度
     if fit is not None:
         score += fit * 2
 
     return round(score, 2)
 
-def merge_validation(opportunities: list[dict], validation: dict):
+def merge_validation(opportunities: list, validation: dict):
     merged = []
     for row in opportunities:
         v = validation.get(row["phrase"], {})

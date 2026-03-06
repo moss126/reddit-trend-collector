@@ -1,6 +1,8 @@
-user_agent: "reddit-trend-collector/1.4"
+user_agent: "reddit-trend-collector/1.4.3-fix"
+
 sleep_seconds: 1
 timeout_seconds: 20
+max_retries: 5
 
 communities:
   printing:
@@ -9,21 +11,6 @@ communities:
       - functionalprint
       - resinprinting
       - BambuLab
-
-  miniatures:
-    subreddits:
-      - PrintedMinis
-      - minis
-      - miniatures
-      - terrainbuilding
-
-  toys:
-    subreddits:
-      - toys
-      - ActionFigures
-      - boardgames
-      - tabletop
-      - DungeonsAndDragons
 
 collect:
   hot: true
