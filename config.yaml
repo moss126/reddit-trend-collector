@@ -1,0 +1,33 @@
+user_agent: "reddit-trend-collector/1.4"
+sleep_seconds: 1
+timeout_seconds: 20
+
+communities:
+  printing:
+    subreddits:
+      - 3Dprinting
+      - functionalprint
+      - resinprinting
+      - BambuLab
+
+  miniatures:
+    subreddits:
+      - PrintedMinis
+      - minis
+      - miniatures
+      - terrainbuilding
+
+  toys:
+    subreddits:
+      - toys
+      - ActionFigures
+      - boardgames
+      - tabletop
+      - DungeonsAndDragons
+
+collect:
+  hot: true
+  rising: true
+
+limits:
+  per_subreddit: 100
