@@ -7,10 +7,21 @@ max_retries: 5
 communities:
   printing:
     subreddits:
-      - Flower vase
-      - Flower pot
-      - Bookends
-      - birthday decorations 
+      - 3Dprinting
+      - houseplants
+      - plants
+      - HomeDecorating
+      - interiordecorating
+      - DIY
+      - crafts
+      - somethingimade
+      - Pottery
+      - Ceramics
+      - GiftIdeas
+      - partyplanning
+      - 3Dprinting
+      - INEEEEDIT
+      - shutupandtakemymoney
 
 collect:
   hot: true
