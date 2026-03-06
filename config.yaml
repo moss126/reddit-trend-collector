@@ -7,10 +7,10 @@ max_retries: 5
 communities:
   printing:
     subreddits:
-      - 3Dprinting
-      - functionalprint
-      - resinprinting
-      - BambuLab
+      - Flower vase
+      - Flower pot
+      - Bookends
+      - birthday decorations 
 
 collect:
   hot: true
